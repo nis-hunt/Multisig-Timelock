@@ -29,16 +29,16 @@ describe("Box", () => {
   });
 
   // Test case 2:
-  // it("does not return a value not stored", async () => {
-  //   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  it("does not return a value not stored", async () => {
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-  //   numbers.map((num)=>{
-  //   await box.store(num);
-  //   let _num = await box.retrieve().toString;
-  //   expect(_num).to.equal(`${num}`);
-  //   console.log(`stored value:${_num} == put value${num}`);
-  //   })
-  // });
+    numbers.map(async (num) => {
+      await box.store(num);
+      let _num = await box.retrieve().toString;
+      expect(_num).to.equal(`${num}`);
+      console.log(`stored value:${_num} == put value${num}`);
+    });
+  });
 
   it("retrieve returns a value previously stored", async () => {
     // Store a value
